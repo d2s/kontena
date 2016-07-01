@@ -17,6 +17,7 @@ class Grid
   field :overlay_cidr, type: String, default: -> { Grid.default_overlay_cidr }
   field :trusted_subnets, type: Array, default: []
   field :stats, type: Hash, default: {}
+  field :acme_client_cert, type: String
 
   has_many :host_nodes, dependent: :destroy
   has_many :host_node_stats
@@ -29,6 +30,7 @@ class Grid
   has_many :registries, dependent: :delete
   has_many :overlay_cidrs, dependent: :delete
   has_many :stacks, dependent: :destroy
+  has_many :grid_domain_authorizations, dependent: :delete
   has_and_belongs_to_many :users
 
   index({ name: 1 }, { unique: true })

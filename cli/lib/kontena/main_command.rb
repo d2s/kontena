@@ -23,6 +23,7 @@ require_relative 'cli/vault_command'
 require_relative 'cli/user_command'
 require_relative 'cli/plugin_command'
 require_relative 'cli/version_command'
+require_relative 'cli/certificate_command'
 
 class Kontena::MainCommand < Kontena::Command
 
@@ -30,6 +31,7 @@ class Kontena::MainCommand < Kontena::Command
   subcommand "app", "App specific commands", Kontena::Cli::AppCommand
   subcommand "service", "Service specific commands", Kontena::Cli::ServiceCommand
   subcommand "vault", "Vault specific commands", Kontena::Cli::VaultCommand
+  subcommand "certificate", "LE Certificate specific commands", Kontena::Cli::CertificateCommand
   subcommand "node", "Node specific commands", Kontena::Cli::NodeCommand
   subcommand "master", "Master specific commands", Kontena::Cli::MasterCommand
   subcommand "vpn", "VPN specific commands", Kontena::Cli::VpnCommand
